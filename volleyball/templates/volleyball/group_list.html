@@ -1,0 +1,17 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>Groups</h1>
+  <a href="{% url 'group-create' %}">create group</a>
+  {% if group_list %}
+  <ul>
+    {% for group in group_list %}
+      <li>
+        <a href="{{ group.get_absolute_url }}">{{ group.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no groups.</p>
+  {% endif %}       
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>{{ event }}</h1>
+  {% if event.initiator == user %}
+  <a href="{% url 'event-update' event.id %}">edit this event</a><br>
+  <a href="{% url 'event-delete' event.id %}">cancel this event</a>
+  {% endif %}
+  <p><strong>Initiator:</strong> {{ event.initiator }}</p>
+  {% if event.group %}
+  <p><strong>Group:</strong> {{ event.group }}</p>
+  {% endif %}
+  <p><strong>Court detail:</strong> {{ event.court_detail|linebreaks }}</p>
+  <p><strong>Time:</strong> {{ event.play_start_time }}</p>
+  <p><strong>Player quota:</strong> {{ event.player_quota }}</p>
+  <p><strong>Play detail:</strong> {{ event.play_detail|linebreaks }}</p>
+  <hr>
+  {% if user in event.participants.all %}
+  <a href="{% url 'event-quit' event.id %}">quit</a>
+  {% elif event.player_quota > event.participants.all|length and event.initiator != user %}
+  <a href="{% url 'event-signup' event.id %}">sign up</a>
+  {% endif %}
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Participants({{event.participants.all|length}})</h4>
+    {% for player in event.participants.all %}
+    {{ player }}<br>
+    {% empty %}
+    There are no participants.
+    {% endfor %}
+  </div>
+{% endblock %}

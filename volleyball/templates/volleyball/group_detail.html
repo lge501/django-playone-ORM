@@ -1,0 +1,59 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>{{ group.name }}</h1>
+
+  {% if is_organizer %}
+  <a href="{% url 'group-delete' group.id %}">disband this group</a>
+  {% elif is_admin or is_member %}
+  <a href="{% url 'group-quit' group.id %}">leave this group</a>
+  {% elif is_pending %}
+  <a href="{% url 'group-quit' group.id %}">cancel application</a>
+  {% else %}
+  <a href="{% url 'group-join' group.id %}">apply to join</a>
+  {% endif %}
+
+  <p><strong>Organizer:</strong> {{ group.organizer }}</p>
+  <p><strong>Court:</strong> {{ group.court }}</p>
+  <p><strong>About:</strong>{{ group.about|linebreaks }}</p>
+
+  {% if is_organizer or is_admin %}
+  {% if memberships_pending %}
+  <hr>
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Pending</h4>
+    {% for m in memberships_pending %}
+    {{ m.player }}
+      <a href="{% url 'membership-member' m.id %}">approve</a>
+      <a href="{% url 'membership-delete' m.id %}">reject</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <hr>
+  <div style="margin-left:20px;margin-top:20px">
+
+    <h4>Admins</h4>
+    {% for m in memberships_admin %}
+      {{ m.player }}
+      {% if is_organizer %}
+      <a href="{% url 'membership-member' m.id %}">to member</a>
+      <a href="{% url 'membership-delete' m.id %}">delete</a>
+      {% endif %}
+    {% endfor %}
+
+    <h4>Members</h4>
+    {% for m in memberships_member %}
+      {{ m.player }}
+      {% if is_organizer %}
+      <a href="{% url 'membership-admin' m.id %}">to admin</a>
+      {% endif %}
+      {% if is_organizer or is_admin %}
+      <a href="{% url 'membership-delete' m.id %}">delete</a>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+
+{% endblock %}

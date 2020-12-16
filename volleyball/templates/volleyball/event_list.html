@@ -1,0 +1,17 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>Events</h1>
+  <a href="{% url 'event-create' %}">create event</a>
+  {% if event_list %}
+  <ul>
+    {% for event in event_list %}
+      <li>
+        <a href="{{ event.get_absolute_url }}">{{ event }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no events.</p>
+  {% endif %}       
+{% endblock %}

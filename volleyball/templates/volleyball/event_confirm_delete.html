@@ -1,0 +1,14 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+
+<h1>Cancel Event</h1>
+
+<p>Are you sure you want to cancel the event: {{ event }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="Yes" />
+</form>
+
+{% endblock %}

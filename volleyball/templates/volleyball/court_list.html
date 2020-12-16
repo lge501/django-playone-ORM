@@ -1,0 +1,17 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>Courts</h1>
+  <a href="{% url 'court-create' %}">new court</a>
+  {% if court_list %}
+  <ul>
+    {% for court in court_list %}
+      <li>
+        <a href="{{ court.get_absolute_url }}">{{ court.name }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no courts.</p>
+  {% endif %}       
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>{{ court.name }}</h1>
+  <p><strong>City:</strong></p>
+  <p>
+    <strong>Photo:</strong>
+  </p>
+  {% if court.photo %}
+  <img src="{{ court.photo.url }}" class="img-responsive" style="width: 400;" />
+  {% else %}
+  None
+  {% endif %}
+
+{% endblock %}

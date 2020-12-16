@@ -1,0 +1,25 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+  <h1>Volleyball Playone</h1>
+  <p>Find out what's happening in pick-up volleyball groups around Taiwan and start meeting up with the ones near you!</p>
+
+  {% if groups %}
+  My groups:<br>
+  <ul>
+    {% for group in groups %}
+    <li><a href="{% url 'group-detail' group.id %}">{{ group }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if events %}
+  My events:<br>
+  <ul>
+    {% for event in events %}
+    <li><a href="{% url 'event-detail' event.id %}">{{ event }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+{% endblock %}

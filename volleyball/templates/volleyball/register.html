@@ -1,0 +1,14 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+<h2>Register</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+or<br>
+{% load socialaccount %}
+{% providers_media_js %}
+<a href="{% provider_login_url 'facebook' %}">Sign in with Facebook</a>
+{% endblock %}

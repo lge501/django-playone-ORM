@@ -1,0 +1,15 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+
+<h1>Create Court</h1>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+
+{% endblock %}

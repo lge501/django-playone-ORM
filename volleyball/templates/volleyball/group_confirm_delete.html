@@ -1,0 +1,14 @@
+{% extends "volleyball/base_generic.html" %}
+
+{% block content %}
+
+<h1>Disband Group</h1>
+
+<p>Are you sure you want to disband the group: {{ group }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" action="" value="Yes" />
+</form>
+
+{% endblock %}
