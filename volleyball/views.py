@@ -1,5 +1,6 @@
 from datetime import datetime
 
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import transaction
@@ -10,7 +11,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic import UpdateView, CreateView
 
-from .forms import PlayerCreationForm, EventCreateForm
+from .forms import PlayerCreationForm, EventCreateForm, PlayerChangeForm
 from .models import Player, Court, Event, Group, Membership, Participation
 
 
@@ -31,6 +32,7 @@ class PlayerCreateView(CreateView):
 
 class PlayerUpdateView(LoginRequiredMixin, UpdateView):
     model = Player
+    # form_class = PlayerChangeForm
     fields = ['first_name', 'last_name', 'date_of_birth', 'mobile_number']
     template_name = 'volleyball/settings.html'
     success_url = reverse_lazy('setting')
@@ -41,6 +43,7 @@ class PlayerUpdateView(LoginRequiredMixin, UpdateView):
 
 class CourtListView(generic.ListView):
     model = Court
+    paginate_by = settings.PAGINATE_BY
 
 
 class CourtCreateView(LoginRequiredMixin, generic.CreateView):
@@ -54,6 +57,7 @@ class CourtDetailView(generic.DetailView):
 
 class GroupListView(generic.ListView):
     model = Group
+    paginate_by = settings.PAGINATE_BY
 
 
 class GroupDetailView(generic.DetailView):
@@ -178,6 +182,7 @@ def membership_to_admin(request, pk):
 
 class EventListView(generic.ListView):
     queryset = Event.objects.filter(play_date__gt=datetime.now())
+    paginate_by = settings.PAGINATE_BY
 
 
 class EventDetailView(generic.DetailView):

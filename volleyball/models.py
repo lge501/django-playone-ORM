@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
@@ -54,7 +55,7 @@ class Player(AbstractBaseUser):
         # (9, 'Not applicable'),
     ]
     gender = models.PositiveSmallIntegerField(_('gender'), choices=GENDER_CHOICES)
-    date_of_birth = models.DateField(_('date of birth'), null=True, help_text=_('YYYY-MM-DD'))
+    date_of_birth = models.DateField(_('date of birth'), null=True)
     mobile_number = models.CharField(_('mobile number'), max_length=30, blank=True,
                                      help_text=_('digits and +-() only.'),
                                      validators=[validators.RegexValidator(r'^[0-9+()-]+$',
@@ -180,7 +181,7 @@ class Event(models.Model):
         ordering = ['play_date', 'play_start_time']
 
     def __str__(self):
-        return '{:%Y-%m-%d} {:%H:%M} {}'.format(self.play_date, self.play_start_time, self.court.name)
+        return '{} {} {}'.format(self.play_date.strftime(settings.DATE_FORMAT), self.play_start_time.strftime(settings.TIME_FORMAT), self.court.name)
 
     def get_absolute_url(self):
         return reverse('event-detail', args=[str(self.id)])

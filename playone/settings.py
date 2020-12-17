@@ -151,6 +151,12 @@ USE_L10N = True
 
 USE_TZ = False
 
+DATETIME_FORMAT = '%Y-%m-%d %H:%M'
+DATE_FORMAT = '%Y-%m-%d'
+TIME_FORMAT = '%H:%M'
+
+# pagination
+PAGINATE_BY = 10
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
