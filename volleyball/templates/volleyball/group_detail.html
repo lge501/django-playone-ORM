@@ -16,17 +16,38 @@
   <p><strong>Organizer:</strong> {{ group.organizer }}</p>
   <p><strong>Court:</strong> {{ group.court }}</p>
   <p><strong>About:</strong>{{ group.about|linebreaks }}</p>
+  {% if is_organizer %}
+  <a href="{% url 'group-update' group.id %}">edit about</a>
+  {% endif %}
+
+  <hr>
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Events</h4>
+    {% if is_organizer or is_admin or is_member %}
+    <a href="{% url 'group-event-create' group.id %}">create event</a><br>
+    {% endif %}
+    <ul>
+    {% for e in events %}
+      <li><a href="{% url 'event-detail' e.id %}">{{ e }}</a></li>
+    {% endfor %}
+    </ul>
+
+  </div>
+
 
   {% if is_organizer or is_admin %}
   {% if memberships_pending %}
   <hr>
   <div style="margin-left:20px;margin-top:20px">
     <h4>Pending</h4>
+    <ul>
     {% for m in memberships_pending %}
-    {{ m.player }}
-      <a href="{% url 'membership-member' m.id %}">approve</a>
-      <a href="{% url 'membership-delete' m.id %}">reject</a>
+      <li>{{ m.player }}
+        <a href="{% url 'membership-member' m.id %}">approve</a>
+        <a href="{% url 'membership-delete' m.id %}">reject</a>
+      </li>
     {% endfor %}
+    </ul>
   </div>
   {% endif %}
   {% endif %}
@@ -35,24 +56,31 @@
   <div style="margin-left:20px;margin-top:20px">
 
     <h4>Admins</h4>
+    <ul>
     {% for m in memberships_admin %}
-      {{ m.player }}
+      <li>{{ m.player }}
       {% if is_organizer %}
       <a href="{% url 'membership-member' m.id %}">to member</a>
       <a href="{% url 'membership-delete' m.id %}">delete</a>
       {% endif %}
+      </li>
     {% endfor %}
+    </ul>
 
     <h4>Members</h4>
+    <ul>
     {% for m in memberships_member %}
+      <li>
       {{ m.player }}
       {% if is_organizer %}
-      <a href="{% url 'membership-admin' m.id %}">to admin</a>
+        <a href="{% url 'membership-admin' m.id %}">to admin </a>
       {% endif %}
       {% if is_organizer or is_admin %}
-      <a href="{% url 'membership-delete' m.id %}">delete</a>
+        <a href="{% url 'membership-delete' m.id %}">delete</a>
       {% endif %}
+      </li>
     {% endfor %}
+    </ul>
 
   </div>
 

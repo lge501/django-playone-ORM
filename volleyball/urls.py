@@ -20,6 +20,7 @@ urlpatterns += [
     path('group/<int:pk>/delete', views.GroupDeleteView.as_view(), name='group-delete'),
     path('group/<int:pk>/join', views.group_join, name='group-join'),
     path('group/<int:pk>/quit', views.group_quit, name='group-quit'),
+    path('group/<int:pk>/event/create', views.GroupEventCreateView.as_view(), name='group-event-create'),
     path('membership/<int:pk>/delete', views.membership_delete, name='membership-delete'),
     path('membership/<int:pk>/member', views.membership_to_member, name='membership-member'),
     path('membership/<int:pk>/admin', views.membership_to_admin, name='membership-admin'),

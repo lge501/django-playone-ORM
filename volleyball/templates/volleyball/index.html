@@ -4,6 +4,15 @@
   <h1>Volleyball Playone</h1>
   <p>Find out what's happening in pick-up volleyball groups around Taiwan and start meeting up with the ones near you!</p>
 
+  {% if events %}
+  My events:<br>
+  <ul>
+    {% for event in events %}
+    <li><a href="{% url 'event-detail' event.id %}">{{ event }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
   {% if groups %}
   My groups:<br>
   <ul>
@@ -13,13 +22,13 @@
   </ul>
   {% endif %}
 
-  {% if events %}
-  My events:<br>
-  <ul>
-    {% for event in events %}
-    <li><a href="{% url 'event-detail' event.id %}">{{ event }}</a></li>
+  {% if group_events %}
+  My group events:<br>
+  <table>
+    {% for event in group_events %}
+    <tr><td>{{ event.group }}</td><td><a href="{% url 'event-detail' event.id %}">{{ event }}</a></td></tr>
     {% endfor %}
-  </ul>
+  </table>
   {% endif %}
 
 {% endblock %}

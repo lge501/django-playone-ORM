@@ -34,3 +34,13 @@ class EventCreateForm(forms.ModelForm):
             'play_date': DateInput(format=settings.DATE_FORMAT, attrs={'type': 'date', 'value': datetime.today().strftime(settings.DATE_FORMAT)},),
             'play_start_time': DateInput(format=settings.TIME_FORMAT, attrs={'type': 'time', 'value': datetime.now().strftime(settings.TIME_FORMAT)},),
         }
+
+
+class GroupEventCreateForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['court', 'court_detail', 'play_date', 'play_start_time', 'player_quota', 'is_public', 'play_detail']
+        widgets = {
+            'play_date': DateInput(format=settings.DATE_FORMAT, attrs={'type': 'date', 'value': datetime.today().strftime(settings.DATE_FORMAT)},),
+            'play_start_time': DateInput(format=settings.TIME_FORMAT, attrs={'type': 'time', 'value': datetime.now().strftime(settings.TIME_FORMAT)},),
+        }

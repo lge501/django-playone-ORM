@@ -43,9 +43,6 @@ class PlayerManager(BaseUserManager):
 
 
 class Player(AbstractBaseUser):
-    email = models.EmailField(_('email'), max_length=255, unique=True)
-    first_name = models.CharField(_('first name'), max_length=30)
-    last_name = models.CharField(_('last name'), max_length=30)
     MALE = 1
     FEMALE = 2
     GENDER_CHOICES = [
@@ -54,6 +51,10 @@ class Player(AbstractBaseUser):
         (FEMALE, 'Female'),
         # (9, 'Not applicable'),
     ]
+
+    email = models.EmailField(_('email'), max_length=255, unique=True)
+    first_name = models.CharField(_('first name'), max_length=30)
+    last_name = models.CharField(_('last name'), max_length=30)
     gender = models.PositiveSmallIntegerField(_('gender'), choices=GENDER_CHOICES)
     date_of_birth = models.DateField(_('date of birth'), null=True)
     mobile_number = models.CharField(_('mobile number'), max_length=30, blank=True,
@@ -106,7 +107,6 @@ def signup_facebook_extra_fields(sociallogin, user, **kwargs):
 class Court(models.Model):
     name = models.CharField(_('name'), max_length=80, unique=True)
     photo = models.ImageField(upload_to='images/', null=True, blank=True)
-
     # city
     # GENDER_CHOICES = [
     #     # (0, 'Not known'),
@@ -138,8 +138,6 @@ class Group(models.Model):
 
 
 class Membership(models.Model):
-    group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    player = models.ForeignKey(Player, on_delete=models.CASCADE)
     ORGANIZER = 0
     ADMIN = 1
     MEMBER = 2
@@ -150,6 +148,8 @@ class Membership(models.Model):
         (MEMBER, 'member'),
         (PENDING, 'pending'),
     ]
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    player = models.ForeignKey(Player, on_delete=models.CASCADE)
     status = models.PositiveSmallIntegerField(_('status'), choices=STATUS_CHOICES)
 
     class Meta:
@@ -157,25 +157,53 @@ class Membership(models.Model):
             models.UniqueConstraint(fields=['group', 'player'], name='unique_membership')
         ]
 
+    @property
+    def is_member(self):
+        return self.status in [self.ORGANIZER, self.ADMIN, self.MEMBER]
+
+    @property
+    def is_admin(self):
+        return self.status in [self.ORGANIZER, self.ADMIN]
+
+    @property
+    def is_organizer(self):
+        return self.status == self.ORGANIZER
+
+
+class EventQuerySet(models.QuerySet):
+    def get_public(self):
+        return self.filter(is_public=True)
+
+    def get_valid(self):
+        return self.filter(is_expired=False)
+
+
+class EventManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().select_related('group', 'court')
+
 
 class Event(models.Model):
-    initiator = models.ForeignKey(Player, verbose_name=_('initiator'), on_delete=models.CASCADE)
-    group = models.ForeignKey(Group, verbose_name=_('group'), on_delete=models.CASCADE, null=True)
-    court = models.ForeignKey(Court, verbose_name=_('court'), on_delete=models.CASCADE)
-    court_detail = models.TextField(_('court detail'), max_length=300, blank=True)
-    play_date = models.DateField(_('play date'))
-    play_start_time = models.TimeField(_('play start time'), )
-    # play_end_time = models.TimeField(_('play end time'), )
-    player_quota = models.PositiveSmallIntegerField(_('player quota'), blank=False, default=6)
-    play_detail = models.TextField(_('play detail'), max_length=300, blank=True)
-    participants = models.ManyToManyField(Player, through='Participation', related_name='participations')
     NET_TYPE_CHOICES = [
         (0, 'Middle'),
         (1, 'Male'),
         (2, 'Female'),
     ]
-
+    initiator = models.ForeignKey(Player, verbose_name=_('initiator'), on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, verbose_name=_('group'), on_delete=models.CASCADE, null=True)
+    is_public = models.BooleanField(_('is public'), default=True)
+    court = models.ForeignKey(Court, verbose_name=_('court'), on_delete=models.CASCADE)
+    court_detail = models.TextField(_('court detail'), max_length=300, blank=True)
+    play_date = models.DateField(_('play date'))
+    play_start_time = models.TimeField(_('play start time'), )
+    # play_end_time = models.TimeField(_('play end time'), )
+    is_expired = models.BooleanField(_('is expired'), default=False)
+    player_quota = models.PositiveSmallIntegerField(_('player quota'), blank=False, default=6)
+    play_detail = models.TextField(_('play detail'), max_length=300, blank=True)
+    participants = models.ManyToManyField(Player, through='Participation', related_name='participations')
     # net_type = models.PositiveSmallIntegerField(_('net type'), choices=NET_TYPE_CHOICES, default=1)
+
+    objects = EventManager.from_queryset(EventQuerySet)()
 
     class Meta:
         ordering = ['play_date', 'play_start_time']
@@ -185,6 +213,37 @@ class Event(models.Model):
 
     def get_absolute_url(self):
         return reverse('event-detail', args=[str(self.id)])
+
+    def get_group_membership(self, user):
+        try:
+            return Membership.objects.get(group=self.group, player=user)
+        except:
+            return None
+
+    def has_group_member(self, user):
+        # try:
+        #     membership = Membership.objects.get(group=self.group, player=user)
+        #     return membership.is_admin()
+        # except Membership.DoesNotExist:
+        #     return False
+        membership = self.get_group_membership(user)
+        if membership:
+            return membership.is_member
+        else:
+            return False
+
+    def has_group_admin(self, user):
+        membership = self.get_group_membership(user)
+        if membership:
+            return membership.is_admin
+        else:
+            return False
+
+    def is_viewable_by(self, user):
+        return self.is_public or self.initiator == user or self.has_group_member(user)
+
+    def can_edit_by(self, user):
+        return not self.is_expired and user.is_authenticated and (self.initiator == user or self.has_group_admin(user))
 
 
 class Participation(models.Model):
