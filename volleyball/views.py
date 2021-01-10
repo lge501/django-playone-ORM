@@ -110,7 +110,7 @@ class GroupCreateView(LoginRequiredMixin, generic.CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['method'] = _('Create')
+        context['title'] = _('Create Group')
         return context
 
     def form_valid(self, form):
@@ -131,7 +131,7 @@ class GroupUpdateView(LoginRequiredMixin, generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['method'] = _('Edit')
+        context['title'] = _('Edit Group')
         return context
 
     def post(self, request, *args, **kwargs):
@@ -279,7 +279,7 @@ class EventCreateView(LoginRequiredMixin, generic.CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['method'] = _('Create')
+        context['title'] = _('Create Event')
         return context
 
     def form_valid(self, form):
@@ -295,7 +295,7 @@ class EventUpdateView(LoginRequiredMixin, generic.UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['method'] = _('Edit')
+        context['title'] = _('Edit Event')
         return context
 
     def post(self, request, *args, **kwargs):

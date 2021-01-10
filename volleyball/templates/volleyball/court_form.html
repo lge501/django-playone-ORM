@@ -1,15 +1,16 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
 
-<h1>Create Court</h1>
+<h1>{% translate "Create Court" %}</h1>
 
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
     {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit">
+    <input type="submit" value="{% translate "Submit" %}">
   </form>
 
 {% endblock %}

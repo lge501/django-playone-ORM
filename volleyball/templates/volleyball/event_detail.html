@@ -1,38 +1,39 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
   <h1>{{ event }}</h1>
 
   {% if can_edit %}
-    <a href="{% url 'event-update' event.id %}">edit this event</a><br>
-    <a href="{% url 'event-delete' event.id %}">cancel this event</a>
+    <a href="{% url 'event-update' event.id %}">{% translate "Edit" %}</a><br>
+    <a href="{% url 'event-delete' event.id %}">{% translate "Cancel" %}</a>
   {% endif %}
 
-  <p><strong>Initiator:</strong> {{ event.initiator }}</p>
+  <p><strong>{% translate "Initiator: " %}</strong>{{ event.initiator }}</p>
 
   {% if event.group %}
-  <p><strong>Group:</strong> <a href="{% url 'group-detail' event.group.id %}">{{ event.group }}</a> </p>
+  <p><strong>{% translate "Group: " %}</strong><a href="{% url 'group-detail' event.group.id %}">{{ event.group }}</a></p>
   {% endif %}
 
-  <p><strong>Court detail:</strong> {{ event.court_detail|linebreaks }}</p>
-  <p><strong>Time:</strong> {{ event.play_start_time }}</p>
-  <p><strong>Player quota:</strong> {{ event.player_quota }}</p>
-  <p><strong>Play detail:</strong> {{ event.play_detail|linebreaks }}</p>
+  <p><strong>{% translate "Court Detail: " %}</strong>{{ event.court_detail|linebreaks }}</p>
+  <p><strong>{% translate "Time: " %}</strong>{{ event.play_start_time }}</p>
+  <p><strong>{% translate "Player Quota: " %}</strong>{{ event.player_quota }}</p>
+  <p><strong>{% translate "Play Detail: " %}</strong>{{ event.play_detail|linebreaks }}</p>
   <hr>
 
   {% if user in event.participants.all %}
-    <a href="{% url 'event-quit' event.id %}">quit</a>
+    <a href="{% url 'event-quit' event.id %}">{% translate "Quit" %}</a>
   {% elif event.player_quota > event.participants.all|length and event.initiator != user %}
-    <a href="{% url 'event-signup' event.id %}">sign up</a>
+    <a href="{% url 'event-signup' event.id %}">{% translate "Sign Up" %}</a>
   {% endif %}
 
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Participants({{event.participants.all|length}})</h4>
+    <h4>{% translate "Participants" %} ({{event.participants.all|length}})</h4>
 
     {% for player in event.participants.all %}
       {{ player }}<br>
     {% empty %}
-      There are no participants.
+      {% translate "There are no participants." %}
     {% endfor %}
 
   </div>

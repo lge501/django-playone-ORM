@@ -1,0 +1,466 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-10 18:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\playone\settings.py:149
+msgid "English"
+msgstr ""
+
+#: .\playone\settings.py:150
+msgid "Traditional Chinese"
+msgstr ""
+
+#: .\templates\registration\logged_out.html:5
+msgid "Logged out!"
+msgstr ""
+
+#: .\templates\registration\logged_out.html:6
+msgid "Click here to login again."
+msgstr ""
+
+#: .\templates\registration\login.html:7
+msgid "Your email and password didn't match. Please try again."
+msgstr ""
+
+#: .\templates\registration\login.html:32
+msgid "login"
+msgstr ""
+
+#: .\templates\registration\login.html:37
+msgid "Lost password?"
+msgstr ""
+
+#: .\templates\registration\login.html:41
+#: .\volleyball\templates\volleyball\base_generic.html:37
+#: .\volleyball\templates\volleyball\register.html:14
+msgid "Sign in with Facebook"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:5
+msgid "The password has been changed!"
+msgstr ""
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "log in again?"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:6
+msgid "Please enter (and confirm) your new password."
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:14
+msgid "New password: "
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:19
+msgid "Confirm password: "
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:24
+msgid "Change my password"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:29
+msgid "Password reset failed"
+msgstr ""
+
+#: .\templates\registration\password_reset_confirm.html:30
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: .\templates\registration\password_reset_done.html:5
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
+msgstr ""
+
+#: .\templates\registration\password_reset_email.html:2
+#, python-format
+msgid ""
+"Someone asked for password reset for email %(email)s. Follow the link below:"
+msgstr ""
+
+#: .\templates\registration\password_reset_form.html:11
+msgid "Reset password"
+msgstr ""
+
+#: .\volleyball\admin.py:17
+msgid "Personal info"
+msgstr ""
+
+#: .\volleyball\admin.py:18
+msgid "Permissions"
+msgstr ""
+
+#: .\volleyball\admin.py:19
+msgid "Important dates"
+msgstr ""
+
+#: .\volleyball\models.py:55
+msgid "email"
+msgstr ""
+
+#: .\volleyball\models.py:56
+msgid "first name"
+msgstr ""
+
+#: .\volleyball\models.py:57
+msgid "last name"
+msgstr ""
+
+#: .\volleyball\models.py:58
+msgid "gender"
+msgstr ""
+
+#: .\volleyball\models.py:59
+msgid "date of birth"
+msgstr ""
+
+#: .\volleyball\models.py:60
+msgid "mobile number"
+msgstr ""
+
+#: .\volleyball\models.py:61
+msgid "digits and +-() only."
+msgstr ""
+
+#: .\volleyball\models.py:63
+msgid "Enter a valid mobile number."
+msgstr ""
+
+#: .\volleyball\models.py:65
+msgid "date joined"
+msgstr ""
+
+#: .\volleyball\models.py:108 .\volleyball\models.py:125
+msgid "name"
+msgstr ""
+
+#: .\volleyball\models.py:109
+msgid "photo"
+msgstr ""
+
+#: .\volleyball\models.py:128
+msgid "about"
+msgstr ""
+
+#: .\volleyball\models.py:151
+msgid "status"
+msgstr ""
+
+#: .\volleyball\models.py:190
+msgid "initiator"
+msgstr ""
+
+#: .\volleyball\models.py:191
+msgid "group"
+msgstr ""
+
+#: .\volleyball\models.py:192
+msgid "is public"
+msgstr ""
+
+#: .\volleyball\models.py:193
+msgid "court"
+msgstr ""
+
+#: .\volleyball\models.py:194
+msgid "court detail"
+msgstr ""
+
+#: .\volleyball\models.py:195
+msgid "play date"
+msgstr ""
+
+#: .\volleyball\models.py:196
+msgid "play start time"
+msgstr ""
+
+#: .\volleyball\models.py:198
+msgid "is expired"
+msgstr ""
+
+#: .\volleyball\models.py:199
+msgid "player quota"
+msgstr ""
+
+#: .\volleyball\models.py:200
+msgid "play detail"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:21
+msgid "Home"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:22
+#: .\volleyball\templates\volleyball\court_list.html:5
+msgid "Courts"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:23
+#: .\volleyball\templates\volleyball\group_list.html:5
+msgid "Groups"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:24
+#: .\volleyball\templates\volleyball\event_list.html:5
+#: .\volleyball\templates\volleyball\group_detail.html:26
+msgid "Events"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:29
+msgid "Player: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:30
+#: .\volleyball\templates\volleyball\settings.html:5
+msgid "Settings"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:31
+msgid "Log Out"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:33
+msgid "Login"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:34
+#: .\volleyball\templates\volleyball\register.html:5
+msgid "Register"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\base_generic.html:43
+msgid "Language:"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_detail.html:6
+msgid "City: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_detail.html:7
+msgid "Address: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_detail.html:10
+msgid "Photo: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_form.html:6
+#: .\volleyball\templates\volleyball\court_list.html:6
+msgid "Create Court"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_form.html:13
+#: .\volleyball\templates\volleyball\event_form.html:13
+#: .\volleyball\templates\volleyball\group_event_form.html:12
+#: .\volleyball\templates\volleyball\group_form.html:13
+#: .\volleyball\templates\volleyball\register.html:9
+#: .\volleyball\templates\volleyball\settings.html:9
+msgid "Submit"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\court_list.html:16
+msgid "There are no courts."
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:6
+msgid "Cancel Event"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:7
+msgid "Are you sure you want to cancel this event?"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:11
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:11
+msgid "Yes"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:8
+msgid "Edit"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:9
+msgid "Cancel"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:12
+msgid "Initiator: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:15
+msgid "Group: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:18
+msgid "Court Detail: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:19
+msgid "Time: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:20
+msgid "Player Quota: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:21
+msgid "Play Detail: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:25
+msgid "Quit"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:27
+msgid "Sign Up"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:31
+msgid "Participants"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_detail.html:36
+msgid "There are no participants."
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_list.html:6
+#: .\volleyball\templates\volleyball\group_detail.html:28
+#: .\volleyball\views.py:282
+msgid "Create Event"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\event_list.html:16
+msgid "There are no events."
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:5
+msgid "Disband Group"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:6
+msgid "Are you sure you want to disband this group?"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:8
+msgid "disband"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:10
+msgid "leave"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:12
+msgid "cancel application"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:14
+msgid "apply to join"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:17
+msgid "Organizer: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:18
+msgid "Court: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:19
+msgid "About: "
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:21
+msgid "edit"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:42
+msgid "Pending"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:46
+msgid "approve"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:47
+msgid "reject"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:58
+msgid "Admins"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:63
+msgid "to member"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:64
+#: .\volleyball\templates\volleyball\group_detail.html:79
+msgid "delete"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:70
+msgid "Members"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_detail.html:76
+msgid "to admin"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_event_form.html:5
+msgid "Create Group Event"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_list.html:6
+#: .\volleyball\views.py:113
+msgid "Create Group"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\group_list.html:16
+msgid "There are no groups."
+msgstr ""
+
+#: .\volleyball\templates\volleyball\index.html:6
+msgid ""
+"Find out what's happening in pick-up volleyball groups around Taiwan and "
+"start meeting up with the ones near you!"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\index.html:9
+msgid "My events:"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\index.html:18
+msgid "My groups:"
+msgstr ""
+
+#: .\volleyball\templates\volleyball\index.html:27
+msgid "My group events:"
+msgstr ""
+
+#: .\volleyball\views.py:134
+msgid "Edit Group"
+msgstr ""
+
+#: .\volleyball\views.py:298
+msgid "Edit Event"
+msgstr ""

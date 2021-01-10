@@ -106,15 +106,13 @@ def signup_facebook_extra_fields(sociallogin, user, **kwargs):
 
 class Court(models.Model):
     name = models.CharField(_('name'), max_length=80, unique=True)
-    photo = models.ImageField(upload_to='images/', null=True, blank=True)
-    # city
-    # GENDER_CHOICES = [
-    #     # (0, 'Not known'),
+    photo = models.ImageField(_('photo'), upload_to='images/', null=True, blank=True)
+
+    # CITY_CHOICES = [
     #     (1, 'Male'),
     #     (2, 'Female'),
-    #     # (9, 'Not applicable'),
     # ]
-    # gender = models.PositiveSmallIntegerField(choices=GENDER_CHOICES, default=1)
+    # city = models.PositiveSmallIntegerField(_('city'), choices=CITY_CHOICES, default=1)
 
     def __str__(self):
         return self.name

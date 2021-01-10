@@ -1,8 +1,9 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
-  <h1>Courts</h1>
-  <a href="{% url 'court-create' %}">new court</a>
+  <h1>{% translate "Courts" %}</h1>
+  <a href="{% url 'court-create' %}">{% translate "Create Court" %}</a>
   {% if court_list %}
   <ul>
     {% for court in court_list %}
@@ -12,6 +13,6 @@
     {% endfor %}
   </ul>
   {% else %}
-    <p>There are no courts.</p>
+    <p>{% translate "There are no courts." %}</p>
   {% endif %}
 {% endblock %}

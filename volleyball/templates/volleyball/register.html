@@ -1,14 +1,15 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
-<h2>Register</h2>
+<h2>{% translate "Register" %}</h2>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
-  <button type="submit">Submit</button>
+  <button type="submit">{% translate "Submit" %}</button>
 </form>
-or<br>
+<br>
 {% load socialaccount %}
 {% providers_media_js %}
-<a href="{% provider_login_url 'facebook' %}">Sign in with Facebook</a>
+<a href="{% provider_login_url 'facebook' %}">{% translate "Sign in with Facebook" %}</a>
 {% endblock %}

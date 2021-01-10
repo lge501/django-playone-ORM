@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-10 18:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\playone\settings.py:149
+msgid "English"
+msgstr "英文"
+
+#: .\playone\settings.py:150
+msgid "Traditional Chinese"
+msgstr "繁體中文"
+
+#: .\templates\registration\logged_out.html:5
+msgid "Logged out!"
+msgstr "已經登出"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Click here to login again."
+msgstr "點此再次登入"
+
+#: .\templates\registration\login.html:7
+msgid "Your email and password didn't match. Please try again."
+msgstr "信箱與密碼比對失敗，請再試一次"
+
+#: .\templates\registration\login.html:32
+msgid "login"
+msgstr "登入"
+
+#: .\templates\registration\login.html:37
+msgid "Lost password?"
+msgstr "忘記密碼？"
+
+#: .\templates\registration\login.html:41
+#: .\volleyball\templates\volleyball\base_generic.html:37
+#: .\volleyball\templates\volleyball\register.html:14
+msgid "Sign in with Facebook"
+msgstr "以Facebook登入"
+
+#: .\templates\registration\password_reset_complete.html:5
+msgid "The password has been changed!"
+msgstr "密碼已變更"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "log in again?"
+msgstr "再次登入？"
+
+#: .\templates\registration\password_reset_confirm.html:6
+msgid "Please enter (and confirm) your new password."
+msgstr "請輸入新密碼"
+
+#: .\templates\registration\password_reset_confirm.html:14
+msgid "New password: "
+msgstr "新的密碼："
+
+#: .\templates\registration\password_reset_confirm.html:19
+msgid "Confirm password: "
+msgstr "確認密碼："
+
+#: .\templates\registration\password_reset_confirm.html:24
+msgid "Change my password"
+msgstr "更改密碼"
+
+#: .\templates\registration\password_reset_confirm.html:29
+msgid "Password reset failed"
+msgstr "密碼更改失敗"
+
+#: .\templates\registration\password_reset_confirm.html:30
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "密碼重置連結已經失效，可能是已經被使用。請申請新的重置密碼請求"
+
+#: .\templates\registration\password_reset_done.html:5
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
+msgstr ""
+"我們已經將設置密碼指示寄至您的信箱。若在數分鐘之內尚未收到，請檢查垃圾郵件信"
+"箱。"
+
+#: .\templates\registration\password_reset_email.html:2
+#, python-format
+msgid ""
+"Someone asked for password reset for email %(email)s. Follow the link below:"
+msgstr "要重置此信箱%(email)s的密碼。請使用以下連結："
+
+#: .\templates\registration\password_reset_form.html:11
+msgid "Reset password"
+msgstr "重置密碼"
+
+#: .\volleyball\admin.py:17
+msgid "Personal info"
+msgstr ""
+
+#: .\volleyball\admin.py:18
+msgid "Permissions"
+msgstr ""
+
+#: .\volleyball\admin.py:19
+msgid "Important dates"
+msgstr ""
+
+#: .\volleyball\models.py:55
+msgid "email"
+msgstr "信箱"
+
+#: .\volleyball\models.py:56
+msgid "first name"
+msgstr "名"
+
+#: .\volleyball\models.py:57
+msgid "last name"
+msgstr "姓"
+
+#: .\volleyball\models.py:58
+msgid "gender"
+msgstr "性別"
+
+#: .\volleyball\models.py:59
+msgid "date of birth"
+msgstr "出生年月日"
+
+#: .\volleyball\models.py:60
+msgid "mobile number"
+msgstr "手機號碼"
+
+#: .\volleyball\models.py:61
+msgid "digits and +-() only."
+msgstr "只能使用數字或+-()"
+
+#: .\volleyball\models.py:63
+msgid "Enter a valid mobile number."
+msgstr "請輸入有效的手機號碼"
+
+#: .\volleyball\models.py:65
+msgid "date joined"
+msgstr "加入日期"
+
+#: .\volleyball\models.py:108 .\volleyball\models.py:125
+msgid "name"
+msgstr "名稱"
+
+#: .\volleyball\models.py:109
+msgid "photo"
+msgstr "相片"
+
+#: .\volleyball\models.py:128
+msgid "about"
+msgstr "關於"
+
+#: .\volleyball\models.py:151
+msgid "status"
+msgstr "狀態"
+
+#: .\volleyball\models.py:190
+msgid "initiator"
+msgstr "發起人"
+
+#: .\volleyball\models.py:191
+msgid "group"
+msgstr "球團"
+
+#: .\volleyball\models.py:192
+msgid "is public"
+msgstr "是否公開"
+
+#: .\volleyball\models.py:193
+msgid "court"
+msgstr "球場"
+
+#: .\volleyball\models.py:194
+msgid "court detail"
+msgstr "球場細節"
+
+#: .\volleyball\models.py:195
+msgid "play date"
+msgstr "開打日期"
+
+#: .\volleyball\models.py:196
+msgid "play start time"
+msgstr "開打時間"
+
+#: .\volleyball\models.py:198
+msgid "is expired"
+msgstr "是否過期"
+
+#: .\volleyball\models.py:199
+msgid "player quota"
+msgstr "名額"
+
+#: .\volleyball\models.py:200
+msgid "play detail"
+msgstr "說明"
+
+#: .\volleyball\templates\volleyball\base_generic.html:21
+msgid "Home"
+msgstr "首頁"
+
+#: .\volleyball\templates\volleyball\base_generic.html:22
+#: .\volleyball\templates\volleyball\court_list.html:5
+msgid "Courts"
+msgstr "球場"
+
+#: .\volleyball\templates\volleyball\base_generic.html:23
+#: .\volleyball\templates\volleyball\group_list.html:5
+msgid "Groups"
+msgstr "球團"
+
+#: .\volleyball\templates\volleyball\base_generic.html:24
+#: .\volleyball\templates\volleyball\event_list.html:5
+#: .\volleyball\templates\volleyball\group_detail.html:26
+msgid "Events"
+msgstr "揪團"
+
+#: .\volleyball\templates\volleyball\base_generic.html:29
+msgid "Player: "
+msgstr "球員："
+
+#: .\volleyball\templates\volleyball\base_generic.html:30
+#: .\volleyball\templates\volleyball\settings.html:5
+msgid "Settings"
+msgstr "設定"
+
+#: .\volleyball\templates\volleyball\base_generic.html:31
+msgid "Log Out"
+msgstr "登出"
+
+#: .\volleyball\templates\volleyball\base_generic.html:33
+msgid "Login"
+msgstr "登入"
+
+#: .\volleyball\templates\volleyball\base_generic.html:34
+#: .\volleyball\templates\volleyball\register.html:5
+msgid "Register"
+msgstr "註冊"
+
+#: .\volleyball\templates\volleyball\base_generic.html:43
+msgid "Language:"
+msgstr "語言"
+
+#: .\volleyball\templates\volleyball\court_detail.html:6
+msgid "City: "
+msgstr "縣市："
+
+#: .\volleyball\templates\volleyball\court_detail.html:7
+msgid "Address: "
+msgstr "地址："
+
+#: .\volleyball\templates\volleyball\court_detail.html:10
+msgid "Photo: "
+msgstr "相片："
+
+#: .\volleyball\templates\volleyball\court_form.html:6
+#: .\volleyball\templates\volleyball\court_list.html:6
+msgid "Create Court"
+msgstr "建立球場"
+
+#: .\volleyball\templates\volleyball\court_form.html:13
+#: .\volleyball\templates\volleyball\event_form.html:13
+#: .\volleyball\templates\volleyball\group_event_form.html:12
+#: .\volleyball\templates\volleyball\group_form.html:13
+#: .\volleyball\templates\volleyball\register.html:9
+#: .\volleyball\templates\volleyball\settings.html:9
+msgid "Submit"
+msgstr "送出"
+
+#: .\volleyball\templates\volleyball\court_list.html:16
+msgid "There are no courts."
+msgstr "目前沒有球場"
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:6
+msgid "Cancel Event"
+msgstr "取消揪團"
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:7
+msgid "Are you sure you want to cancel this event?"
+msgstr "你確定要取消這個揪團嗎？"
+
+#: .\volleyball\templates\volleyball\event_confirm_delete.html:11
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:11
+msgid "Yes"
+msgstr "確定"
+
+#: .\volleyball\templates\volleyball\event_detail.html:8
+msgid "Edit"
+msgstr "編輯"
+
+#: .\volleyball\templates\volleyball\event_detail.html:9
+msgid "Cancel"
+msgstr "取消"
+
+#: .\volleyball\templates\volleyball\event_detail.html:12
+msgid "Initiator: "
+msgstr "發起人："
+
+#: .\volleyball\templates\volleyball\event_detail.html:15
+msgid "Group: "
+msgstr "球團："
+
+#: .\volleyball\templates\volleyball\event_detail.html:18
+msgid "Court Detail: "
+msgstr "球場說明："
+
+#: .\volleyball\templates\volleyball\event_detail.html:19
+msgid "Time: "
+msgstr "時間："
+
+#: .\volleyball\templates\volleyball\event_detail.html:20
+msgid "Player Quota: "
+msgstr "名額："
+
+#: .\volleyball\templates\volleyball\event_detail.html:21
+msgid "Play Detail: "
+msgstr "說明："
+
+#: .\volleyball\templates\volleyball\event_detail.html:25
+msgid "Quit"
+msgstr "退出"
+
+#: .\volleyball\templates\volleyball\event_detail.html:27
+msgid "Sign Up"
+msgstr "報名"
+
+#: .\volleyball\templates\volleyball\event_detail.html:31
+msgid "Participants"
+msgstr "參加者"
+
+#: .\volleyball\templates\volleyball\event_detail.html:36
+msgid "There are no participants."
+msgstr "目前沒有參加者"
+
+#: .\volleyball\templates\volleyball\event_list.html:6
+#: .\volleyball\templates\volleyball\group_detail.html:28
+#: .\volleyball\views.py:282
+msgid "Create Event"
+msgstr "建立揪團"
+
+#: .\volleyball\templates\volleyball\event_list.html:16
+msgid "There are no events."
+msgstr "目前沒有揪團"
+
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:5
+msgid "Disband Group"
+msgstr "解散球團"
+
+#: .\volleyball\templates\volleyball\group_confirm_delete.html:6
+msgid "Are you sure you want to disband this group?"
+msgstr "你確定要解散這個球團嗎？"
+
+#: .\volleyball\templates\volleyball\group_detail.html:8
+msgid "disband"
+msgstr "解散"
+
+#: .\volleyball\templates\volleyball\group_detail.html:10
+msgid "leave"
+msgstr "離開"
+
+#: .\volleyball\templates\volleyball\group_detail.html:12
+msgid "cancel application"
+msgstr "取消申請加入"
+
+#: .\volleyball\templates\volleyball\group_detail.html:14
+msgid "apply to join"
+msgstr "申請加入"
+
+#: .\volleyball\templates\volleyball\group_detail.html:17
+msgid "Organizer: "
+msgstr "創立人："
+
+#: .\volleyball\templates\volleyball\group_detail.html:18
+msgid "Court: "
+msgstr "球場："
+
+#: .\volleyball\templates\volleyball\group_detail.html:19
+msgid "About: "
+msgstr "關於："
+
+#: .\volleyball\templates\volleyball\group_detail.html:21
+msgid "edit"
+msgstr "編輯"
+
+#: .\volleyball\templates\volleyball\group_detail.html:42
+msgid "Pending"
+msgstr "待審核"
+
+#: .\volleyball\templates\volleyball\group_detail.html:46
+msgid "approve"
+msgstr "同意"
+
+#: .\volleyball\templates\volleyball\group_detail.html:47
+msgid "reject"
+msgstr "拒絕"
+
+#: .\volleyball\templates\volleyball\group_detail.html:58
+msgid "Admins"
+msgstr "管理員"
+
+#: .\volleyball\templates\volleyball\group_detail.html:63
+msgid "to member"
+msgstr "改成一般成員"
+
+#: .\volleyball\templates\volleyball\group_detail.html:64
+#: .\volleyball\templates\volleyball\group_detail.html:79
+msgid "delete"
+msgstr "剔除"
+
+#: .\volleyball\templates\volleyball\group_detail.html:70
+msgid "Members"
+msgstr "成員"
+
+#: .\volleyball\templates\volleyball\group_detail.html:76
+msgid "to admin"
+msgstr "改成管理員"
+
+#: .\volleyball\templates\volleyball\group_event_form.html:5
+msgid "Create Group Event"
+msgstr "建立球團揪團"
+
+#: .\volleyball\templates\volleyball\group_list.html:6
+#: .\volleyball\views.py:113
+msgid "Create Group"
+msgstr "建立球團"
+
+#: .\volleyball\templates\volleyball\group_list.html:16
+msgid "There are no groups."
+msgstr "目前沒有球團"
+
+#: .\volleyball\templates\volleyball\index.html:6
+msgid ""
+"Find out what's happening in pick-up volleyball groups around Taiwan and "
+"start meeting up with the ones near you!"
+msgstr "探索附近的排球揪團，加入他們一起打球！"
+
+#: .\volleyball\templates\volleyball\index.html:9
+msgid "My events:"
+msgstr "我的揪團："
+
+#: .\volleyball\templates\volleyball\index.html:18
+msgid "My groups:"
+msgstr "我的球團："
+
+#: .\volleyball\templates\volleyball\index.html:27
+msgid "My group events:"
+msgstr "我的球團揪團："
+
+#: .\volleyball\views.py:134
+msgid "Edit Group"
+msgstr "編輯球團"
+
+#: .\volleyball\views.py:298
+msgid "Edit Event"
+msgstr "編輯揪團"

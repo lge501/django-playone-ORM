@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,24 +18,39 @@
       {% block sidebar %}
         <ul class="sidebar-nav">
 
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'court-list' %}">Courts</a></li>
-            <li><a href="{% url 'group-list' %}">Groups</a></li>
-            <li><a href="{% url 'event-list' %}">Events</a></li>
+            <li><a href="{% url 'index' %}">{% translate "Home" %}</a></li>
+            <li><a href="{% url 'court-list' %}">{% translate "Courts" %}</a></li>
+            <li><a href="{% url 'group-list' %}">{% translate "Groups" %}</a></li>
+            <li><a href="{% url 'event-list' %}">{% translate "Events" %}</a></li>
 
             <hr>
 
             {% if user.is_authenticated %}
-            <li>Player: {{ user.get_short_name }}</li>
-            <li><a href="{% url 'setting' %}">Settings</a></li>
-            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            <li>{% translate "Player: " %}{{ user.get_short_name }}</li>
+            <li><a href="{% url 'setting' %}">{% translate "Settings" %}</a></li>
+            <li><a href="{% url 'logout' %}">{% translate "Log Out" %}</a></li>
             {% else %}
-            <li><a href="{% url 'login' %}">Login</a></li></li>
-            <li><a href="{% url 'register' %}">Register</a></li></li>
+            <li><a href="{% url 'login' %}">{% translate "Login" %}</a></li></li>
+            <li><a href="{% url 'register' %}">{% translate "Register" %}</a></li></li>
             {% load socialaccount %}
             {% providers_media_js %}
-            <a href="{% provider_login_url 'facebook' %}">Sign in with Facebook</a>
+            <a href="{% provider_login_url 'facebook' %}">{% translate "Sign in with Facebook" %}</a>
             {% endif %}
+
+            <hr>
+
+            {% get_available_languages as languages %}
+            {% trans "Language:" %}
+            {% for lang_code, lang_name in languages %}
+                {% language lang_code %}
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ redirect_to }}" />
+                    <input name="language" type="hidden" value="{{ lang_code }}" />
+                    <button type="submit">{{ lang_name }}</button>
+                </form>
+                {% endlanguage %}
+            {% endfor %}
 
         </ul>
      {% endblock %}

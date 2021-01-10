@@ -1,15 +1,15 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
   <h1>{{ court.name }}</h1>
-  <p><strong>City:</strong></p>
-  <p>
-    <strong>Photo:</strong>
-  </p>
+  <p><strong>{% translate "City: " %}</strong>{{ court.city }}</p>
+  <p><strong>{% translate "Address: " %}</strong>{{ court.address }}</p>
   {% if court.photo %}
+  <p>
+    <strong>{% translate "Photo: " %}</strong>
+  </p>
   <img src="{{ court.photo.url }}" class="img-responsive" style="width: 400;" />
-  {% else %}
-  None
   {% endif %}
 
 {% endblock %}

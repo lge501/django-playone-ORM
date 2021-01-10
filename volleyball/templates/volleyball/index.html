@@ -1,11 +1,12 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
   <h1>Volleyball Playone</h1>
-  <p>Find out what's happening in pick-up volleyball groups around Taiwan and start meeting up with the ones near you!</p>
+  <p>{% translate "Find out what's happening in pick-up volleyball groups around Taiwan and start meeting up with the ones near you!" %}</p>
 
   {% if events %}
-  My events:<br>
+  {% translate "My events:" %}<br>
   <ul>
     {% for event in events %}
     <li><a href="{% url 'event-detail' event.id %}">{{ event }}</a></li>
@@ -14,7 +15,7 @@
   {% endif %}
 
   {% if groups %}
-  My groups:<br>
+  {% translate "My groups:" %}<br>
   <ul>
     {% for group in groups %}
     <li><a href="{% url 'group-detail' group.id %}">{{ group }}</a></li>
@@ -23,7 +24,7 @@
   {% endif %}
 
   {% if group_events %}
-  My group events:<br>
+  {% translate "My group events:" %}<br>
   <table>
     {% for event in group_events %}
     <tr><td>{{ event.group }}</td><td><a href="{% url 'event-detail' event.id %}">{{ event }}</a></td></tr>

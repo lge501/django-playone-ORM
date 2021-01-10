@@ -1,9 +1,10 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
 
 {% if form.errors %}
-  <p>Your email and password didn't match. Please try again.</p>
+  <p>{% translate "Your email and password didn't match. Please try again." %}</p>
 {% endif %}
 
 <!--{% if next %}-->
@@ -28,16 +29,15 @@
 </div>
 
 <div>
-  <input type="submit" value="login" />
+  <input type="submit" value="{% translate "login" %}" />
   <input type="hidden" name="next" value="{{ next }}" />
 </div>
 </form>
 
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'password_reset' %}">{% translate "Lost password?" %}</a></p>
 
 {% load socialaccount %}
 {% providers_media_js %}
-<a href="{% provider_login_url 'facebook' %}">Sign in with Facebook</a>
+<a href="{% provider_login_url 'facebook' %}">{% translate "Sign in with Facebook" %}</a>
 
 {% endblock %}

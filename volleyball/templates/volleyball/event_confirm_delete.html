@@ -1,14 +1,14 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
 
-<h1>Cancel Event</h1>
-
-<p>Are you sure you want to cancel the event: {{ event }}?</p>
-
-<form action="" method="POST">
+<h1>{% translate "Cancel Event" %}</h1>
+<p>{% translate "Are you sure you want to cancel this event?" %}</p>
+<p>{{ event }}</p>
+<form method="POST">
   {% csrf_token %}
-  <input type="submit" action="" value="Yes" />
+  <input type="submit" value="{% translate "Yes" %}" />
 </form>
 
 {% endblock %}

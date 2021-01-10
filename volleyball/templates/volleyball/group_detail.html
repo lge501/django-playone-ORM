@@ -1,50 +1,50 @@
 {% extends "volleyball/base_generic.html" %}
+{% load i18n %}
 
 {% block content %}
   <h1>{{ group.name }}</h1>
 
   {% if is_organizer %}
-  <a href="{% url 'group-delete' group.id %}">disband this group</a>
+  <a href="{% url 'group-delete' group.id %}">{% translate "disband" %}</a>
   {% elif is_admin or is_member %}
-  <a href="{% url 'group-quit' group.id %}">leave this group</a>
+  <a href="{% url 'group-quit' group.id %}">{% translate "leave" %}</a>
   {% elif is_pending %}
-  <a href="{% url 'group-quit' group.id %}">cancel application</a>
+  <a href="{% url 'group-quit' group.id %}">{% translate "cancel application" %}</a>
   {% else %}
-  <a href="{% url 'group-join' group.id %}">apply to join</a>
+  <a href="{% url 'group-join' group.id %}">{% translate "apply to join" %}</a>
   {% endif %}
 
-  <p><strong>Organizer:</strong> {{ group.organizer }}</p>
-  <p><strong>Court:</strong> {{ group.court }}</p>
-  <p><strong>About:</strong>{{ group.about|linebreaks }}</p>
+  <p><strong>{% translate "Organizer: " %}</strong>{{ group.organizer }}</p>
+  <p><strong>{% translate "Court: " %}</strong>{{ group.court }}</p>
+  <p><strong>{% translate "About: " %}</strong>{{ group.about|linebreaks }}</p>
   {% if is_organizer %}
-  <a href="{% url 'group-update' group.id %}">edit about</a>
+  <a href="{% url 'group-update' group.id %}">{% translate "edit" %}</a>
   {% endif %}
 
   <hr>
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Events</h4>
+    <h4>{% translate "Events" %}</h4>
     {% if is_organizer or is_admin or is_member %}
-    <a href="{% url 'group-event-create' group.id %}">create event</a><br>
+    <a href="{% url 'group-event-create' group.id %}">{% translate "Create Event" %}</a><br>
     {% endif %}
     <ul>
-    {% for e in events %}
-      <li><a href="{% url 'event-detail' e.id %}">{{ e }}</a></li>
+    {% for event in events %}
+      <li><a href="{% url 'event-detail' event.id %}">{{ event }}</a></li>
     {% endfor %}
     </ul>
 
   </div>
-
 
   {% if is_organizer or is_admin %}
   {% if memberships_pending %}
   <hr>
   <div style="margin-left:20px;margin-top:20px">
-    <h4>Pending</h4>
+    <h4>{% translate "Pending" %}</h4>
     <ul>
-    {% for m in memberships_pending %}
+    {% for m in pending_memberships %}
       <li>{{ m.player }}
-        <a href="{% url 'membership-member' m.id %}">approve</a>
-        <a href="{% url 'membership-delete' m.id %}">reject</a>
+        <a href="{% url 'membership-member' m.id %}">{% translate "approve" %}</a>
+        <a href="{% url 'membership-delete' m.id %}">{% translate "reject" %}</a>
       </li>
     {% endfor %}
     </ul>
@@ -55,28 +55,28 @@
   <hr>
   <div style="margin-left:20px;margin-top:20px">
 
-    <h4>Admins</h4>
+    <h4>{% translate "Admins" %}</h4>
     <ul>
-    {% for m in memberships_admin %}
+    {% for m in admin_memberships %}
       <li>{{ m.player }}
       {% if is_organizer %}
-      <a href="{% url 'membership-member' m.id %}">to member</a>
-      <a href="{% url 'membership-delete' m.id %}">delete</a>
+      <a href="{% url 'membership-member' m.id %}">{% translate "to member" %}</a>
+      <a href="{% url 'membership-delete' m.id %}">{% translate "delete" %}</a>
       {% endif %}
       </li>
     {% endfor %}
     </ul>
 
-    <h4>Members</h4>
+    <h4>{% translate "Members" %}</h4>
     <ul>
-    {% for m in memberships_member %}
+    {% for m in member_memberships %}
       <li>
       {{ m.player }}
       {% if is_organizer %}
-        <a href="{% url 'membership-admin' m.id %}">to admin </a>
+        <a href="{% url 'membership-admin' m.id %}">{% translate "to admin" %}</a>
       {% endif %}
       {% if is_organizer or is_admin %}
-        <a href="{% url 'membership-delete' m.id %}">delete</a>
+        <a href="{% url 'membership-delete' m.id %}">{% translate "delete" %}</a>
       {% endif %}
       </li>
     {% endfor %}

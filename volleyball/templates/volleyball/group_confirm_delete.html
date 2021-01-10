@@ -1,14 +1,14 @@
 {% extends "volleyball/base_generic.html" %}
-
+{% load i18n %}
 {% block content %}
 
-<h1>Disband Group</h1>
+<h1>{% translate "Disband Group" %}</h1>
+<p>{% translate "Are you sure you want to disband this group?" %}</p>
+{{ group }}
 
-<p>Are you sure you want to disband the group: {{ group }}?</p>
-
-<form action="" method="POST">
+<form method="POST">
   {% csrf_token %}
-  <input type="submit" action="" value="Yes" />
+  <input type="submit" value="{% translate "Yes" %}" />
 </form>
 
 {% endblock %}
