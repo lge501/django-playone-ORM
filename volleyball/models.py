@@ -69,7 +69,7 @@ class Player(AbstractBaseUser):
 
     objects = PlayerManager()
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'date of birth']
+    REQUIRED_FIELDS = ['first_name', 'last_name', 'gender', 'date_of_birth']
 
     def __str__(self):
         return self.get_full_name()
