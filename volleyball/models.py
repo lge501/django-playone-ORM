@@ -55,7 +55,7 @@ class Player(AbstractBaseUser):
     email = models.EmailField(_('email'), max_length=255, unique=True)
     first_name = models.CharField(_('first name'), max_length=30)
     last_name = models.CharField(_('last name'), max_length=30)
-    gender = models.PositiveSmallIntegerField(_('gender'), choices=GENDER_CHOICES)
+    gender = models.PositiveSmallIntegerField(_('gender'), choices=GENDER_CHOICES, default=MALE)
     date_of_birth = models.DateField(_('date of birth'), null=True)
     mobile_number = models.CharField(_('mobile number'), max_length=30, blank=True,
                                      help_text=_('digits and +-() only.'),
@@ -106,6 +106,7 @@ def signup_facebook_extra_fields(sociallogin, user, **kwargs):
 
 class Court(models.Model):
     name = models.CharField(_('name'), max_length=80, unique=True)
+    address = models.CharField(_("address"), max_length=256)
     photo = models.ImageField(_('photo'), upload_to='images/', null=True, blank=True)
 
     # CITY_CHOICES = [
@@ -123,8 +124,8 @@ class Court(models.Model):
 
 class Group(models.Model):
     name = models.CharField(_('name'), max_length=50, unique=True)
-    organizer = models.ForeignKey(Player, verbose_name='organizer', on_delete=models.CASCADE, related_name='+')
-    court = models.ForeignKey(Court, verbose_name='court', on_delete=models.CASCADE)
+    organizer = models.ForeignKey(Player, verbose_name=_('organizer'), on_delete=models.CASCADE, related_name='+')
+    court = models.ForeignKey(Court, verbose_name=_('court'), on_delete=models.CASCADE)
     about = models.TextField(_('about'), max_length=600, blank=True)
     members = models.ManyToManyField(Player, through='Membership')
 
@@ -133,6 +134,12 @@ class Group(models.Model):
 
     def get_absolute_url(self):
         return reverse('group-detail', args=[str(self.id)])
+
+    @classmethod
+    def get_joined_by_player_id(cls, player_id):
+        return cls.objects.raw(
+            'SELECT * FROM volleyball_group g JOIN volleyball_membership m on g.id=m.group_id where m.player_id=%s and m.status!=%s',
+            [player_id, Membership.PENDING])
 
 
 class Membership(models.Model):

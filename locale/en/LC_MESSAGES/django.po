@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-10 18:38+0800\n"
+"POT-Creation-Date: 2021-01-18 11:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\playone\settings.py:149
+#: .\playone\settings.py:151
 msgid "English"
 msgstr ""
 
-#: .\playone\settings.py:150
+#: .\playone\settings.py:152
 msgid "Traditional Chinese"
 msgstr ""
 
@@ -150,59 +150,67 @@ msgstr ""
 msgid "date joined"
 msgstr ""
 
-#: .\volleyball\models.py:108 .\volleyball\models.py:125
+#: .\volleyball\models.py:108 .\volleyball\models.py:126
 msgid "name"
 msgstr ""
 
 #: .\volleyball\models.py:109
+msgid "address"
+msgstr ""
+
+#: .\volleyball\models.py:110
 msgid "photo"
 msgstr ""
 
-#: .\volleyball\models.py:128
-msgid "about"
+#: .\volleyball\models.py:127
+msgid "organizer"
 msgstr ""
 
-#: .\volleyball\models.py:151
-msgid "status"
-msgstr ""
-
-#: .\volleyball\models.py:190
-msgid "initiator"
-msgstr ""
-
-#: .\volleyball\models.py:191
-msgid "group"
-msgstr ""
-
-#: .\volleyball\models.py:192
-msgid "is public"
-msgstr ""
-
-#: .\volleyball\models.py:193
+#: .\volleyball\models.py:128 .\volleyball\models.py:200
 msgid "court"
 msgstr ""
 
-#: .\volleyball\models.py:194
-msgid "court detail"
+#: .\volleyball\models.py:129
+msgid "about"
 msgstr ""
 
-#: .\volleyball\models.py:195
-msgid "play date"
+#: .\volleyball\models.py:158
+msgid "status"
 msgstr ""
 
-#: .\volleyball\models.py:196
-msgid "play start time"
+#: .\volleyball\models.py:197
+msgid "initiator"
 msgstr ""
 
 #: .\volleyball\models.py:198
-msgid "is expired"
+msgid "group"
 msgstr ""
 
 #: .\volleyball\models.py:199
+msgid "is public"
+msgstr ""
+
+#: .\volleyball\models.py:201
+msgid "court detail"
+msgstr ""
+
+#: .\volleyball\models.py:202
+msgid "play date"
+msgstr ""
+
+#: .\volleyball\models.py:203
+msgid "play start time"
+msgstr ""
+
+#: .\volleyball\models.py:205
+msgid "is expired"
+msgstr ""
+
+#: .\volleyball\models.py:206
 msgid "player quota"
 msgstr ""
 
-#: .\volleyball\models.py:200
+#: .\volleyball\models.py:207
 msgid "play detail"
 msgstr ""
 
@@ -345,7 +353,7 @@ msgstr ""
 
 #: .\volleyball\templates\volleyball\event_list.html:6
 #: .\volleyball\templates\volleyball\group_detail.html:28
-#: .\volleyball\views.py:282
+#: .\volleyball\views.py:283
 msgid "Create Event"
 msgstr ""
 
@@ -431,7 +439,7 @@ msgid "Create Group Event"
 msgstr ""
 
 #: .\volleyball\templates\volleyball\group_list.html:6
-#: .\volleyball\views.py:113
+#: .\volleyball\views.py:114
 msgid "Create Group"
 msgstr ""
 
@@ -457,10 +465,10 @@ msgstr ""
 msgid "My group events:"
 msgstr ""
 
-#: .\volleyball\views.py:134
+#: .\volleyball\views.py:135
 msgid "Edit Group"
 msgstr ""
 
-#: .\volleyball\views.py:298
+#: .\volleyball\views.py:299
 msgid "Edit Event"
 msgstr ""

@@ -20,8 +20,8 @@ from .models import Player, Court, Event, Group, Membership, Participation
 def index(request):
     context = {}
     if request.user.is_authenticated:
-        context['events'] = Event.objects.get_valid().filter(Q(participants=request.user) | Q(initiator=request.user))
-        context['groups'] = Group.objects.filter(members=request.user).exclude(membership__status=Membership.PENDING)
+        context['events'] = Event.objects.get_valid().filter(Q(participants=request.user) | Q(initiator=request.user)).distinct()
+        context['groups'] = Group.get_joined_by_player_id(request.user.id)
         if len(context['groups']) > 0:
             context['group_events'] = Event.objects.get_valid().filter(group__in=[g.id for g in context['groups']])
     return render(request, 'volleyball/index.html', context=context)
@@ -58,7 +58,8 @@ class CourtListView(generic.ListView):
 
 class CourtCreateView(LoginRequiredMixin, generic.CreateView):
     model = Court
-    fields = '__all__'
+    fields = ['name', 'address']
+    # fields = '__all__'
 
 
 class CourtDetailView(generic.DetailView):
@@ -87,9 +88,9 @@ class GroupDetailView(generic.DetailView):
         context['events'] = Event.objects.get_valid().filter(group=self.object)
 
         memberships = self.object.members.all()
-        context['memberships_pending'] = [m for m in memberships if m.status == Membership.PENDING]
-        context['memberships_member'] = [m for m in memberships if m.status == Membership.MEMBER]
-        context['memberships_admin'] = [m for m in memberships if m.status == Membership.ADMIN]
+        context['pending_memberships'] = [m for m in memberships if m.status == Membership.PENDING]
+        context['member_memberships'] = [m for m in memberships if m.status == Membership.MEMBER]
+        context['admin_memberships'] = [m for m in memberships if m.status == Membership.ADMIN]
 
         status = next((m.status for m in memberships if m.player == self.request.user), None)
         if status != None:

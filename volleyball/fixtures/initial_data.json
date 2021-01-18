@@ -1,0 +1,429 @@
+[
+  {
+    "model": "volleyball.player",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$uUQVstlQ3zp6$n6A5PD/CaEZSn42bUcqUxx55rvdNmQb0z/1EUn/WWKQ=",
+      "last_login": "2021-01-15T15:56:08.109",
+      "email": "a01@gmail.com",
+      "first_name": "Adlex",
+      "last_name": "Aa",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-14T17:21:11.986",
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$oNqsFC5BqEhQ$qODYbMBZhwTx0ELSdj998goQpn1YozfUzH43dE1BBEc=",
+      "last_login": "2021-01-17T14:02:45.074",
+      "email": "t01@gmail.com",
+      "first_name": "Alex",
+      "last_name": "Aa",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-14T17:32:00",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$DP3cf5K4Hz7f$zar7oVVkRLlVPx8yKYCHve3bhca3MohCzrnuDxAGPOQ=",
+      "last_login": "2021-01-17T14:22:55.621",
+      "email": "t02@gmail.com",
+      "first_name": "Bob",
+      "last_name": "Bo",
+      "gender": 1,
+      "date_of_birth": "2000-01-02",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T11:21:49.043",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$3qVpjNO4HaR5$HKuY0q0lKt41CDaOTCiiR6LpHhIgCjHdR3uvotzMExU=",
+      "last_login": "2021-01-17T14:23:35.921",
+      "email": "t03@gmail.com",
+      "first_name": "Carl",
+      "last_name": "Ca",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:08:10.212",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$lbyEZWoZW05i$0R3OSf9OQMPC2e6e1ZnAgxCfxN1zCWs7oo/tnxFjexk=",
+      "last_login": "2021-01-17T15:47:29.487",
+      "email": "t04@gmail.com",
+      "first_name": "David",
+      "last_name": "Da",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:08:29.495",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$I7q07A7dZucH$3qHL9/XylcUrHx+WiXJg9+FJQT+xQgPJ7zGE7lyf9Yo=",
+      "last_login": "2021-01-17T15:48:03.426",
+      "email": "t05@gmail.com",
+      "first_name": "Eric",
+      "last_name": "Ee",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:08:52.487",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$H3IAdAUKsqEE$FcaMumaEj8VCYyFACyAuMcJrlx+HgSGQEn3YO/iX/wc=",
+      "last_login": "2021-01-17T14:00:03.349",
+      "email": "t06@gmail.com",
+      "first_name": "Flora",
+      "last_name": "Fo",
+      "gender": 2,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:10:37.484",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$2JT5ug9pBcjN$qWizpuLlS4eVw0cMRcRW5Gpz+NaIq6kKZeA6sAmCuDw=",
+      "last_login": "2021-01-17T14:02:04.266",
+      "email": "t07@gmail.com",
+      "first_name": "Gary",
+      "last_name": "Ga",
+      "gender": 1,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:11:26.660",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.player",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$216000$8YOg14z14k8E$S2Wvft50iPSh4ObuZ6iHWvl1VM4RzLfImwldAiNmvP4=",
+      "last_login": null,
+      "email": "t08@gmail.com",
+      "first_name": "Hedwig",
+      "last_name": "He",
+      "gender": 2,
+      "date_of_birth": "2000-01-01",
+      "mobile_number": "",
+      "date_joined": "2021-01-15T13:12:39.442",
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false
+    }
+  },
+  {
+    "model": "volleyball.court",
+    "pk": 1,
+    "fields": {
+      "name": "成功大學光復球場",
+      "address": "台南市東區大學路1號",
+      "photo": ""
+    }
+  },
+  {
+    "model": "volleyball.court",
+    "pk": 2,
+    "fields": {
+      "name": "臺大排球場",
+      "address": "台北市大安區羅斯福路四段一號",
+      "photo": ""
+    }
+  },
+  {
+    "model": "volleyball.group",
+    "pk": 1,
+    "fields": {
+      "name": "成大周末團",
+      "organizer": 2,
+      "court": 1,
+      "about": "一群常約周末打球的朋友"
+    }
+  },
+  {
+    "model": "volleyball.group",
+    "pk": 2,
+    "fields": {
+      "name": "公館老人",
+      "organizer": 3,
+      "court": 2,
+      "about": "大家都老啦"
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 1,
+    "fields": {
+      "group": 1,
+      "player": 2,
+      "status": 0
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 2,
+    "fields": {
+      "group": 2,
+      "player": 3,
+      "status": 0
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 3,
+    "fields": {
+      "group": 1,
+      "player": 4,
+      "status": 1
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 4,
+    "fields": {
+      "group": 2,
+      "player": 4,
+      "status": 1
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 6,
+    "fields": {
+      "group": 1,
+      "player": 5,
+      "status": 3
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 7,
+    "fields": {
+      "group": 2,
+      "player": 5,
+      "status": 1
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 8,
+    "fields": {
+      "group": 1,
+      "player": 6,
+      "status": 2
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 9,
+    "fields": {
+      "group": 2,
+      "player": 6,
+      "status": 2
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 10,
+    "fields": {
+      "group": 2,
+      "player": 7,
+      "status": 2
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 11,
+    "fields": {
+      "group": 1,
+      "player": 7,
+      "status": 2
+    }
+  },
+  {
+    "model": "volleyball.membership",
+    "pk": 12,
+    "fields": {
+      "group": 2,
+      "player": 8,
+      "status": 2
+    }
+  },
+  {
+    "model": "volleyball.event",
+    "pk": 1,
+    "fields": {
+      "initiator": 4,
+      "group": null,
+      "is_public": true,
+      "court": 1,
+      "court_detail": "光復一場",
+      "play_date": "2021-03-15",
+      "play_start_time": "16:00:00",
+      "is_expired": false,
+      "player_quota": 5,
+      "play_detail": "都歡迎~"
+    }
+  },
+  {
+    "model": "volleyball.event",
+    "pk": 2,
+    "fields": {
+      "initiator": 3,
+      "group": 2,
+      "is_public": false,
+      "court": 2,
+      "court_detail": "老地方",
+      "play_date": "2021-03-20",
+      "play_start_time": "15:30:00",
+      "is_expired": false,
+      "player_quota": 6,
+      "play_detail": "練一波"
+    }
+  },
+  {
+    "model": "volleyball.event",
+    "pk": 3,
+    "fields": {
+      "initiator": 6,
+      "group": null,
+      "is_public": true,
+      "court": 1,
+      "court_detail": "三場",
+      "play_date": "2021-03-17",
+      "play_start_time": "17:00:00",
+      "is_expired": false,
+      "player_quota": 5,
+      "play_detail": "弱弱求加入"
+    }
+  },
+  {
+    "model": "volleyball.event",
+    "pk": 4,
+    "fields": {
+      "initiator": 6,
+      "group": null,
+      "is_public": true,
+      "court": 2,
+      "court_detail": "",
+      "play_date": "2021-01-17",
+      "play_start_time": "15:00:00",
+      "is_expired": false,
+      "player_quota": 6,
+      "play_detail": "下雨自動取消哦"
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 1,
+    "fields": {
+      "player": 5,
+      "event": 2
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 2,
+    "fields": {
+      "player": 7,
+      "event": 1
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 3,
+    "fields": {
+      "player": 7,
+      "event": 3
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 4,
+    "fields": {
+      "player": 8,
+      "event": 3
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 5,
+    "fields": {
+      "player": 8,
+      "event": 1
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 6,
+    "fields": {
+      "player": 2,
+      "event": 3
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 7,
+    "fields": {
+      "player": 2,
+      "event": 1
+    }
+  },
+  {
+    "model": "volleyball.participation",
+    "pk": 8,
+    "fields": {
+      "player": 6,
+      "event": 2
+    }
+  }
+]

@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
 from .forms import PlayerChangeForm, PlayerCreationForm
-from .models import Player
+from .models import Player, Court, Group, Event
 
 
 @admin.register(Player)
@@ -31,3 +31,8 @@ class PlayerAdmin(UserAdmin):
     filter_horizontal = ()
     search_fields = ('email', 'first_name', 'last_name', 'mobile_number')
     ordering = ['email',]
+
+
+admin.site.register(Court)
+admin.site.register(Group)
+admin.site.register(Event)

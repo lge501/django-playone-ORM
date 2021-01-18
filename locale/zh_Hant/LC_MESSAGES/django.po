@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-10 18:38+0800\n"
+"POT-Creation-Date: 2021-01-18 11:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: .\playone\settings.py:149
+#: .\playone\settings.py:151
 msgid "English"
 msgstr "英文"
 
-#: .\playone\settings.py:150
+#: .\playone\settings.py:152
 msgid "Traditional Chinese"
 msgstr "繁體中文"
 
@@ -152,59 +152,67 @@ msgstr "請輸入有效的手機號碼"
 msgid "date joined"
 msgstr "加入日期"
 
-#: .\volleyball\models.py:108 .\volleyball\models.py:125
+#: .\volleyball\models.py:108 .\volleyball\models.py:126
 msgid "name"
 msgstr "名稱"
 
 #: .\volleyball\models.py:109
+msgid "address"
+msgstr "地址"
+
+#: .\volleyball\models.py:110
 msgid "photo"
 msgstr "相片"
 
-#: .\volleyball\models.py:128
-msgid "about"
-msgstr "關於"
+#: .\volleyball\models.py:127
+msgid "organizer"
+msgstr "創立者"
 
-#: .\volleyball\models.py:151
-msgid "status"
-msgstr "狀態"
-
-#: .\volleyball\models.py:190
-msgid "initiator"
-msgstr "發起人"
-
-#: .\volleyball\models.py:191
-msgid "group"
-msgstr "球團"
-
-#: .\volleyball\models.py:192
-msgid "is public"
-msgstr "是否公開"
-
-#: .\volleyball\models.py:193
+#: .\volleyball\models.py:128 .\volleyball\models.py:200
 msgid "court"
 msgstr "球場"
 
-#: .\volleyball\models.py:194
+#: .\volleyball\models.py:129
+msgid "about"
+msgstr "關於"
+
+#: .\volleyball\models.py:158
+msgid "status"
+msgstr "狀態"
+
+#: .\volleyball\models.py:197
+msgid "initiator"
+msgstr "發起者"
+
+#: .\volleyball\models.py:198
+msgid "group"
+msgstr "球團"
+
+#: .\volleyball\models.py:199
+msgid "is public"
+msgstr "是否公開"
+
+#: .\volleyball\models.py:201
 msgid "court detail"
 msgstr "球場細節"
 
-#: .\volleyball\models.py:195
+#: .\volleyball\models.py:202
 msgid "play date"
 msgstr "開打日期"
 
-#: .\volleyball\models.py:196
+#: .\volleyball\models.py:203
 msgid "play start time"
 msgstr "開打時間"
 
-#: .\volleyball\models.py:198
+#: .\volleyball\models.py:205
 msgid "is expired"
 msgstr "是否過期"
 
-#: .\volleyball\models.py:199
+#: .\volleyball\models.py:206
 msgid "player quota"
 msgstr "名額"
 
-#: .\volleyball\models.py:200
+#: .\volleyball\models.py:207
 msgid "play detail"
 msgstr "說明"
 
@@ -307,7 +315,7 @@ msgstr "取消"
 
 #: .\volleyball\templates\volleyball\event_detail.html:12
 msgid "Initiator: "
-msgstr "發起人："
+msgstr "發起者："
 
 #: .\volleyball\templates\volleyball\event_detail.html:15
 msgid "Group: "
@@ -347,7 +355,7 @@ msgstr "目前沒有參加者"
 
 #: .\volleyball\templates\volleyball\event_list.html:6
 #: .\volleyball\templates\volleyball\group_detail.html:28
-#: .\volleyball\views.py:282
+#: .\volleyball\views.py:283
 msgid "Create Event"
 msgstr "建立揪團"
 
@@ -381,7 +389,7 @@ msgstr "申請加入"
 
 #: .\volleyball\templates\volleyball\group_detail.html:17
 msgid "Organizer: "
-msgstr "創立人："
+msgstr "創立者："
 
 #: .\volleyball\templates\volleyball\group_detail.html:18
 msgid "Court: "
@@ -433,7 +441,7 @@ msgid "Create Group Event"
 msgstr "建立球團揪團"
 
 #: .\volleyball\templates\volleyball\group_list.html:6
-#: .\volleyball\views.py:113
+#: .\volleyball\views.py:114
 msgid "Create Group"
 msgstr "建立球團"
 
@@ -459,10 +467,10 @@ msgstr "我的球團："
 msgid "My group events:"
 msgstr "我的球團揪團："
 
-#: .\volleyball\views.py:134
+#: .\volleyball\views.py:135
 msgid "Edit Group"
 msgstr "編輯球團"
 
-#: .\volleyball\views.py:298
+#: .\volleyball\views.py:299
 msgid "Edit Event"
 msgstr "編輯揪團"
